@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pink School of STEM: A Plan for Equitable Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce7f3;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="text-[#831843]">
+
+    <div id="infographic-container">
+        <header class="bg-[#d53f8c] text-white p-8 text-center rounded-b-3xl shadow-lg">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight">The Pink School of STEM</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">Empowering the next generation of female innovators by bridging the digital divide and igniting a lifelong passion for technology.</p>
+        </header>
+
+        <main class="container mx-auto p-4 md:p-8">
+
+            <section id="vision" class="my-12 text-center">
+                <h2 class="text-3xl font-bold mb-6 text-[#c084fc]">Our Vision & The Need</h2>
+                <p class="max-w-3xl mx-auto mb-8">We exist to bridge the digital divide, providing every girl with the tools and confidence to become a creative problem-solver and a future leader in a tech-driven world.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-6xl font-black text-[#f472b6]">150</div>
+                        <p class="mt-2 text-lg font-bold">Middle School Girls</p>
+                        <p class="text-sm">Will be empowered each summer through hands-on, engaging STEM education.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-6xl font-black text-[#db2777]">1:1</div>
+                        <p class="mt-2 text-lg font-bold">Device-to-Student Ratio</p>
+                        <p class="text-sm">Ensuring every participant has the dedicated technology needed to thrive.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-6xl font-black text-[#a21caf]">100%</div>
+                        <p class="mt-2 text-lg font-bold">Equitable Access</p>
+                        <p class="text-sm">By removing financial and social barriers to provide cutting-edge resources for all.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="strategy" class="my-16">
+                <h2 class="text-3xl font-bold mb-8 text-center text-[#c084fc]">Our Strategic Approach to Digital Equity</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Our plan is aligned with the Louisiana Department of Education's Statewide Educational Technology Plan, focusing on four pillars to build a comprehensive and sustainable program.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">👩‍🏫</div>
+                        <h3 class="text-xl font-bold mb-2">Professional Development</h3>
+                        <p class="text-sm">Equipping our educators with skills in culturally responsive pedagogy, UDL, and ethical AI integration to support every student.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">🔬</div>
+                        <h3 class="text-xl font-bold mb-2">Curriculum & Instruction</h3>
+                        <p class="text-sm">A story-driven, 3-act curriculum that integrates AI and core STEM concepts with Louisiana state standards for a relevant learning experience.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2">Infrastructure & Hardware</h3>
+                        <p class="text-sm">Providing a robust, one-to-one device ecosystem and high-speed network to ensure seamless access to digital tools.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold mb-2">Creative Funding</h3>
+                        <p class="text-sm">Leveraging grants, corporate partnerships, and innovative community fundraising to secure a sustainable financial future.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="financials" class="my-16">
+                <h2 class="text-3xl font-bold mb-8 text-center text-[#c084fc]">The Financial Blueprint: An Investment in Future Innovators</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-center mb-4">Budget Allocation: $73,500 Total</h3>
+                        <p class="text-center text-sm mb-4">Our budget is strategically allocated to maximize impact, with the largest investment in providing direct access to technology for our students.</p>
+                        <div class="chart-container">
+                            <canvas id="budgetChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-center mb-4">Our Creative Funding Strategy</h3>
+                        <p class="text-center text-sm mb-4">We employ a multi-pronged approach to ensure the program's long-term sustainability.</p>
+                        <ul class="space-y-4 mt-6">
+                            <li class="flex items-start"><span class="text-2xl mr-4">💖</span><div><h4 class="font-bold">"Pink Patrons" Program</h4><p class="text-sm">A recurring giving campaign for community members to support our mission monthly.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4">💡</span><div><h4 class="font-bold">"STEM-a-thon" Fundraiser</h4><p class="text-sm">A student-led hackathon where teams build projects to solve local community problems.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4">🤝</span><div><h4 class="font-bold">Corporate Partnerships</h4><p class="text-sm">Engaging tech companies and local businesses for financial, in-kind, and mentorship support.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4">✨</span><div><h4 class="font-bold">Crowdfunding Campaign</h4><p class="text-sm">Directly appealing to a wider audience to fund specific program needs and resources.</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="my-16">
+                <h2 class="text-3xl font-bold mb-8 text-center text-[#c084fc]">Measuring Our Success</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Success is measured by the growth, confidence, and passion we ignite in our students. We track key indicators to ensure our program is effective and achieving its goals.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2">Student Engagement</h3>
+                        <p class="text-sm">100% of students will demonstrate active participation and measurable growth in problem-solving skills.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">🎓</div>
+                        <h3 class="text-xl font-bold mb-2">Learning Outcomes</h3>
+                        <p class="text-sm">Improved understanding of STEM concepts evidenced by pre/post assessments and final projects.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">🌍</div>
+                        <h3 class="text-xl font-bold mb-2">Equitable Access</h3>
+                        <p class="text-sm">100% of students report having the resources they need, with all socio-economic needs met.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl mb-4">🌟</div>
+                        <h3 class="text-xl font-bold mb-2">Community Impact</h3>
+                        <p class="text-sm">Secure 2+ new corporate partnerships and raise our community profile through engagement.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-[#db2777] text-white p-8 text-center mt-12 rounded-t-3xl">
+            <h2 class="text-3xl font-bold text-[#fbcfe8]">Join Us in Empowering the Future</h2>
+            <p class="mt-4 max-w-2xl mx-auto">Your support can change the trajectory for a young girl in STEM. Become a "Pink Patron" or partner with us to make a lasting impact.</p>
+            <button onclick="showForm()" class="mt-6 bg-[#d53f8c] hover:bg-[#c0397a] text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                Get Involved Today
+            </button>
+        </footer>
+    </div>
+
+    <div id="form-container" class="hidden">
+        <div class="form-wrapper bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-auto my-12 text-[#831843]">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-black text-[#db2777]">Join Our Mission</h1>
+                <p class="mt-2 text-lg text-[#c084fc] font-medium">Be part of empowering the next generation of female innovators.</p>
+            </div>
+
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-bold text-gray-700">Full Name</label>
+                    <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#d53f8c] focus:ring focus:ring-[#d53f8c] focus:ring-opacity-50">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-bold text-gray-700">Email Address</label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#d53f8c] focus:ring focus:ring-[#d53f8c] focus:ring-opacity-50">
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-bold text-gray-700">Phone Number (Optional)</label>
+                    <input type="tel" name="phone" id="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#d53f8c] focus:ring focus:ring-[#d53f8c] focus:ring-opacity-50">
+                </div>
+
+                <div>
+                    <label for="interest" class="block text-sm font-bold text-gray-700">I am interested in...</label>
+                    <select id="interest" name="interest" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#d53f8c] focus:ring focus:ring-[#d53f8c] focus:ring-opacity-50">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="volunteering">Volunteering</option>
+                        <option value="donating">Making a Donation</option>
+                        <option value="sponsoring">Corporate Sponsorship</option>
+                        <option value="partnerships">Community Partnerships</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-bold text-gray-700">How can we help you get involved?</label>
+                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#d53f8c] focus:ring focus:ring-[#d53f8c] focus:ring-opacity-50"></textarea>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button type="button" onclick="showInfographic()" class="bg-gray-400 text-white py-2 px-4 rounded-lg font-bold shadow-lg hover:bg-gray-500 transition-transform transform hover:scale-105">
+                        Back
+                    </button>
+                    <button type="submit" class="bg-[#d53f8c] text-white py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-[#c0397a] transition-transform transform hover:scale-105">
+                        Submit Interest
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(budgetCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Hardware', ['Professional', 'Development'], ['Software &', 'Apps'], ['Network &', 'Support'], 'Operational'],
+                datasets: [{
+                    label: 'Budget Allocation',
+                    data: [59000, 6000, 1500, 5500, 1500],
+                    backgroundColor: [
+                        '#a21caf',
+                        '#f472b6',
+                        '#db2777',
+                        '#c084fc',
+                        '#831843'
+                    ],
+                    borderColor: '#fce7f3',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    },
+                    datalabels: {
+                        color: '#ffffff',
+                        formatter: (value, context) => {
+                            const total = context.chart.data.datasets[0].data.reduce((acc, val) => acc + val, 0);
+                            const percentage = ((value / total) * 100).toFixed(0) + '%';
+                            return percentage;
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+
+        function showForm() {
+            document.getElementById('infographic-container').classList.add('hidden');
+            document.getElementById('form-container').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showInfographic() {
+            document.getElementById('form-container').classList.add('hidden');
+            document.getElementById('infographic-container').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
